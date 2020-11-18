@@ -1,6 +1,6 @@
 package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
 
-public class UGTRDate {
+public class UGRTRTTDate {
     String uts;
 
     public String getUts() {

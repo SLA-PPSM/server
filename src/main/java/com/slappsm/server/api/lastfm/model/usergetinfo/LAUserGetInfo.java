@@ -1,6 +1,6 @@
 package com.slappsm.server.api.lastfm.model.usergetinfo;
 
-public class UserGetInfo {
+public class LAUserGetInfo {
     UGIUser user;
 
     public UGIUser getUser() {

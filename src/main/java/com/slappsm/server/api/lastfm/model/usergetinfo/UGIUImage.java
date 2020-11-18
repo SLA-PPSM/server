@@ -2,7 +2,7 @@ package com.slappsm.server.api.lastfm.model.usergetinfo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UGIImage {
+public class UGIUImage {
 
     @SerializedName("#text")
     String imageUrl;

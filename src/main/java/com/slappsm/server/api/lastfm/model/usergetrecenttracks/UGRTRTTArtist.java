@@ -2,7 +2,7 @@ package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UGTRArtist {
+public class UGRTRTTArtist {
     @SerializedName("#text")
     String artistName;
 

@@ -1,6 +1,6 @@
 package com.slappsm.server.api.lastfm.model.usergetfriends;
 
-public class UserGetFriends {
+public class LAUserGetFriends {
     UGFFriends friends;
 
     public UGFFriends getFriends() {

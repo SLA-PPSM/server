@@ -1,10 +1,10 @@
 package com.slappsm.server.service.impl;
 
 import com.slappsm.server.api.lastfm.LastfmApi;
-import com.slappsm.server.api.lastfm.model.usergetfriends.UserGetFriends;
+import com.slappsm.server.api.lastfm.model.usergetfriends.LAUserGetFriends;
 import com.slappsm.server.api.lastfm.model.usergetinfo.UGIUser;
-import com.slappsm.server.api.lastfm.model.usergetinfo.UserGetInfo;
-import com.slappsm.server.api.lastfm.model.usergetrecenttracks.UserGetRecentTracks;
+import com.slappsm.server.api.lastfm.model.usergetinfo.LAUserGetInfo;
+import com.slappsm.server.api.lastfm.model.usergetrecenttracks.LAUserGetRecentTracks;
 import com.slappsm.server.domain.lastfm.Friend;
 import com.slappsm.server.domain.lastfm.Profile;
 import com.slappsm.server.domain.lastfm.Song;
@@ -34,17 +34,16 @@ public class LastfmServiceImpl implements LastfmService {
     }
 
     @Override
-    public Profile getProfile(String nick) throws IOException {
+    public Profile getProfile(String nick) {
         Profile profile = new Profile();
 
         try {
-            Call<UserGetInfo> call = lastfmApi.getInfo(nick);
+            Call<LAUserGetInfo> call = lastfmApi.getInfo(nick);
             UGIUser user = Objects.requireNonNull(call.execute().body()).getUser();
-
             profile.setNick(user.getName());
             profile.setAvatar(user.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : user.getImage().get(0).getImageUrl());
             profile.setScrobbles(user.getPlaycount());
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IOException e) {
             System.out.println("Something went wrong :(");
         }
 
@@ -52,10 +51,10 @@ public class LastfmServiceImpl implements LastfmService {
     }
 
     @Override
-    public List<Song> getRecentTracks(String nick) throws IOException {
+    public List<Song> getRecentTracks(String nick) {
         ArrayList<Song> songList = new ArrayList<>();
 
-        Call<UserGetRecentTracks> call = lastfmApi.getRecentTracks(nick);
+        Call<LAUserGetRecentTracks> call = lastfmApi.getRecentTracks(nick);
         try {
             Objects.requireNonNull(call.execute().body()).getRecenttracks().getTrack().forEach(ugtrTrack -> {
                 if(ugtrTrack.getDate() != null) {
@@ -67,7 +66,7 @@ public class LastfmServiceImpl implements LastfmService {
                     songList.add(song);
                 }
             });
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IOException e) {
             System.out.println("Something went wrong :(");
         }
 
@@ -75,10 +74,10 @@ public class LastfmServiceImpl implements LastfmService {
     }
 
     @Override
-    public Song getCurrentTrack(String nick) throws IOException {
+    public Song getCurrentTrack(String nick) {
         Song song = new Song();
 
-        Call<UserGetRecentTracks> call = lastfmApi.getRecentTracks(nick);
+        Call<LAUserGetRecentTracks> call = lastfmApi.getRecentTracks(nick);
         try {
             Objects.requireNonNull(call.execute().body()).getRecenttracks().getTrack().forEach(ugtrTrack -> {
                 if(ugtrTrack.getDate() == null) {
@@ -88,7 +87,7 @@ public class LastfmServiceImpl implements LastfmService {
                     song.setDate("now");
                 }
             });
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IOException e) {
             System.out.println("Something went wrong :(");
         }
 
@@ -96,10 +95,10 @@ public class LastfmServiceImpl implements LastfmService {
     }
 
     @Override
-    public List<Friend> getFriends(String nick) throws IOException {
+    public List<Friend> getFriends(String nick) {
         ArrayList<Friend> friends = new ArrayList<>();
 
-        Call<UserGetFriends> call = lastfmApi.getFriends(nick);
+        Call<LAUserGetFriends> call = lastfmApi.getFriends(nick);
         try {
             Objects.requireNonNull(call.execute().body()).getFriends().getUser().forEach(ugfuser -> {
                 Friend friend = new Friend();
@@ -107,7 +106,7 @@ public class LastfmServiceImpl implements LastfmService {
                 friend.setAvatar(ugfuser.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : ugfuser.getImage().get(0).getImageUrl());
                 friends.add(friend);
             });
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IOException e) {
             System.out.println("Something went wrong :(");
         }
 

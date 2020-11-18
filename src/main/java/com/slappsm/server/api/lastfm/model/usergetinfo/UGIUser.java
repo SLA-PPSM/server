@@ -5,7 +5,7 @@ import java.util.List;
 public class UGIUser {
     String name;
     String playcount;
-    List<UGIImage> image;
+    List<UGIUImage> image;
 
     public String getName() {
         return name;
@@ -23,11 +23,11 @@ public class UGIUser {
         this.playcount = playcount;
     }
 
-    public List<UGIImage> getImage() {
+    public List<UGIUImage> getImage() {
         return image;
     }
 
-    public void setImage(List<UGIImage> image) {
+    public void setImage(List<UGIUImage> image) {
         this.image = image;
     }
 }

@@ -2,9 +2,9 @@ package com.slappsm.server.api.lastfm.model.usergetfriends;
 
 import java.util.List;
 
-public class UGFUser {
+public class UGFFUser {
     String name;
-    List<UGFImage> image;
+    List<UGFFUImage> image;
 
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class UGFUser {
         this.name = name;
     }
 
-    public List<UGFImage> getImage() {
+    public List<UGFFUImage> getImage() {
         return image;
     }
 
-    public void setImage(List<UGFImage> image) {
+    public void setImage(List<UGFFUImage> image) {
         this.image = image;
     }
 }

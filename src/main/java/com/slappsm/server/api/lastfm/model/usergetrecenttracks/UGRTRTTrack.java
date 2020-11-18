@@ -2,17 +2,17 @@ package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
 
 import java.util.List;
 
-public class UGTRTrack {
-    UGTRArtist artist;
+public class UGRTRTTrack {
+    UGRTRTTArtist artist;
     String name;
-    List<UGTRImage> image;
-    UGTRDate date;
+    List<UGRTRTTImage> image;
+    UGRTRTTDate date;
 
-    public UGTRArtist getArtist() {
+    public UGRTRTTArtist getArtist() {
         return artist;
     }
 
-    public void setArtist(UGTRArtist artist) {
+    public void setArtist(UGRTRTTArtist artist) {
         this.artist = artist;
     }
 
@@ -24,19 +24,19 @@ public class UGTRTrack {
         this.name = name;
     }
 
-    public List<UGTRImage> getImage() {
+    public List<UGRTRTTImage> getImage() {
         return image;
     }
 
-    public void setImage(List<UGTRImage> image) {
+    public void setImage(List<UGRTRTTImage> image) {
         this.image = image;
     }
 
-    public UGTRDate getDate() {
+    public UGRTRTTDate getDate() {
         return date;
     }
 
-    public void setDate(UGTRDate date) {
+    public void setDate(UGRTRTTDate date) {
         this.date = date;
     }
 }

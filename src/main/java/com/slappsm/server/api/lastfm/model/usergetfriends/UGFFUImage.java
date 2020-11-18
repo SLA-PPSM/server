@@ -1,8 +1,9 @@
-package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
+package com.slappsm.server.api.lastfm.model.usergetfriends;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UGTRImage {
+public class UGFFUImage {
+
     @SerializedName("#text")
     String imageUrl;
 

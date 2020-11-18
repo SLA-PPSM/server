@@ -3,13 +3,13 @@ package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
 import java.util.List;
 
 public class UGRTRecentTracks {
-    List<UGTRTrack> track;
+    List<UGRTRTTrack> track;
 
-    public List<UGTRTrack> getTrack() {
+    public List<UGRTRTTrack> getTrack() {
         return track;
     }
 
-    public void setTrack(List<UGTRTrack> track) {
+    public void setTrack(List<UGRTRTTrack> track) {
         this.track = track;
     }
 }

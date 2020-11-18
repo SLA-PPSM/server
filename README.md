@@ -78,3 +78,34 @@ Response
     {...}
 ]
 ```
+
+#### Search
+```
+GET http://localhost:8080/api/genius/search/{query}
+
+Response
+[
+    {
+        "id": 2827371,
+        "artist": "Taco Hemingway",
+        "title": "WOSK"
+    },
+    {
+        "id": 5526965,
+        "artist": "TACONAFIDE",
+        "title": "#Hot16Challenge2"
+    },
+    {...}
+]
+```
+
+#### Lyrics
+```
+GET http://localhost:8080/api/genius/getLyrics/{id}
+
+Response
+{
+    "id": 2827371,
+    "lyrics": "[Zwrotka 1]\nZnów pioruny oraz deszcze na Żoli\nDworzec Gdański ciągle tęskni za Bowiem\nPłyt słuchałem zamiast stawiać się na lekcje na Woli\nSłaby uczeń, ale po dekadzie jestem na swoim\nZeszło EPek ponad dziesięć patoli\nMiędzy nami spoko, weszło drugie miejsce na OLiS\nMam ambicje, powodzenia jak mi zechcesz zabronić\nW trakcie picia rosną pragnienia, jam się ledwie napoił\nPanie Romanie, niech pan leje napoje\nBo już minęły czasy grania za te sześćset na dwoje\nPiękna nuda mnie pochłania, tak jak w „Rejsie\" nastroje\nPora zacząć cumowanie, bo na mieście mam projekt\nMam dwadzieścia sześć lat i się czuję staro\nJuż nie palę, bo mnie zawsze płuca kłują rano\nJest już północ, także usiądź zostań u mnie na noc\nBiodra kręcą się jak czarny wosk i przejmują salon\n\n[Refren]\nBiodra kręcą się jak wosk i przejmują salon\nBiodra kręcą się jak wosk, biodra kręcą się jak...\n...wosk, wosk, wosk, wosk\nBiodra kręcą się jak wosk i przejmują salon\nBiodra kręcą się jak...\n\n[Zwrotka 2]\nJestem głosem pokolenia, które nie ma nic do powiedzenia\nMimo to relacjonuje wszystko, wszystkie posiedzenia\nKażde wyjście, kino, szybkie piwo, jeszcze szybszą miłość\nZa tą szybką zbitą krążą oczy jak po osi ziemia (Whoa)\nRozkosz dla wątroby i dla podniebienia (Whoa)\nCiężko staram się, by robić wszystko od niechcenia (Whoa)\nGdy ktoś stara się, to go wyzywam od jelenia\nZ jednej strony ciągle jestem wszędzie\nZ drugiej wciąż mnie nie ma\nAgrykola. Młody fan woła do mnie „Siema\"\nZdarza się to pierwszy raz odkąd chodzę biegać\nWe wzruszeniu zgarniam grzywę, bo chce fotę siekać\nPyta kiedy płyta, sklejam pionę, mówię: „Proszę czekać\"\nKorzystając z tej okazji podziękuję fanom\nTo dla Was siedzę nocą i modyfikuję kanon\nPióro gania po notesie, wykonuje slalom\nSłowa kręcą się jak wosk i przejmują salon\n\n[Refren]\nSłowa kręcą się jak wosk i przejmują salon\nSłowa kręcą się jak wosk, słowa kręcą się jak...\n...wosk, wosk, wosk, wosk\nSłowa kręcą się jak wosk i przejmują salon\nSłowa kręcą się jak...\n\n[Zwrotka 3]\nKiedyś skromne publiczności, teraz dosyć liczne\nSto koncertów, ale nie chcę dzisiaj o nich myśleć\nTrzeźwa głowa, ale słowa wiecznie oniryczne\nKtoś wywołał mnie bym pisał teksty polityczne?\nNie, dziękuję. Wolę pisać o sobie\nWolę pisać o ludziach, wolę pisać o Tobie\nGdy odejdą wszyscy fani, wtedy znikam, dosłownie\nNa krótką chwilę. Potem wracam, żeby pisać ponownie\nPracoholik, nieustannie się stresuję labą (Whoa)\nAtakują mnie koszmary, ja je szczuję jawą (Whoa)\nStudio na dziewiątą rano, znowu pluję kawą (Whoa)\nChryste, Rumak, co to jest za bit, chyba czuję zawał\nNie pytasz jak nam idzie, wiesz że tu nutę nagrano\nCzekasz już w domu, ale wiesz że ja wrócę tam rano\nNazajutrz wracam, nie chcesz gadać, chcesz muzykę samą\nBiodra kręcą się jak czarny wosk i przejmują salon\n\n[Refren]\nBiodra kręcą się jak wosk i przejmują salon\nBiodra kręcą się jak, biodra kręcą się jak...\n...wosk, wosk, wosk, wosk\nBiodra kręcą się jak wosk i przejmują salon\n(Wosk, wosk, wosk, wosk, wosk....)\nBiodra kręcą się jak wosk...\n(Wosk, wosk, wosk, wosk, wosk....)\n\nTekst - Rap Genius Polska"
+}
+```

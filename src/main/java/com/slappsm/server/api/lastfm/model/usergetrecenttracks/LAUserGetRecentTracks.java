@@ -1,6 +1,6 @@
 package com.slappsm.server.api.lastfm.model.usergetrecenttracks;
 
-public class UserGetRecentTracks {
+public class LAUserGetRecentTracks {
     UGRTRecentTracks recenttracks;
 
     public UGRTRecentTracks getRecenttracks() {
