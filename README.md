@@ -16,7 +16,7 @@ API for last.fm and genius.com
 
 #### Currently playing song
 ```
-GET http://localhost:8080/api/lastfm/getRecentTracks/{nick}
+GET http://localhost:8080/api/lastfm/getCurrentTrack/{nick}
 
 Response
 {
