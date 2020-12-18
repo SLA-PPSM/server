@@ -41,7 +41,7 @@ public class LastfmServiceImpl implements LastfmService {
             Call<LAUserGetInfo> call = lastfmApi.getInfo(nick);
             UGIUser user = Objects.requireNonNull(call.execute().body()).getUser();
             profile.setNick(user.getName());
-            profile.setAvatar(user.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : user.getImage().get(0).getImageUrl());
+            profile.setAvatar(user.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : user.getImage().get(2).getImageUrl());
             profile.setScrobbles(user.getPlaycount());
         } catch (NullPointerException | IOException e) {
             System.out.println("Something went wrong :(");
@@ -61,7 +61,7 @@ public class LastfmServiceImpl implements LastfmService {
                     Song song = new Song();
                     song.setArtist(ugtrTrack.getArtist().getArtistName());
                     song.setTitle(ugtrTrack.getName());
-                    song.setImage(ugtrTrack.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(0).getImageUrl());
+                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(2).getImageUrl());
                     song.setDate(ugtrTrack.getDate().getUts());
                     songList.add(song);
                 }
@@ -83,7 +83,7 @@ public class LastfmServiceImpl implements LastfmService {
                 if(ugtrTrack.getDate() == null) {
                     song.setArtist(ugtrTrack.getArtist().getArtistName());
                     song.setTitle(ugtrTrack.getName());
-                    song.setImage(ugtrTrack.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(0).getImageUrl());
+                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(2).getImageUrl());
                     song.setDate("now");
                 }
             });
@@ -103,7 +103,7 @@ public class LastfmServiceImpl implements LastfmService {
             Objects.requireNonNull(call.execute().body()).getFriends().getUser().forEach(ugfuser -> {
                 Friend friend = new Friend();
                 friend.setNick(ugfuser.getName());
-                friend.setAvatar(ugfuser.getImage().get(0).getImageUrl().equals("") ? defaultAvatar : ugfuser.getImage().get(0).getImageUrl());
+                friend.setAvatar(ugfuser.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugfuser.getImage().get(2).getImageUrl());
                 friends.add(friend);
             });
         } catch (NullPointerException | IOException e) {
