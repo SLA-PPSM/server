@@ -23,7 +23,8 @@ import java.util.Objects;
 public class LastfmServiceImpl implements LastfmService {
 
     private final LastfmApi lastfmApi;
-    private final String defaultAvatar = "http://fastup.pl/data/mj/sla-ppsm/defaultAvatar.png";
+    private final String defaultAvatar = "https://iv.pl/images/e3884f380aea1b13988e05e22594711e.jpg";
+    private final String defaultCover = "https://iv.pl/images/1e8189f85e9c36dd8972b67f4a5b513d.jpg";
 
     public LastfmServiceImpl() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -61,7 +62,7 @@ public class LastfmServiceImpl implements LastfmService {
                     Song song = new Song();
                     song.setArtist(ugtrTrack.getArtist().getArtistName());
                     song.setTitle(ugtrTrack.getName());
-                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(2).getImageUrl());
+                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultCover : ugtrTrack.getImage().get(2).getImageUrl());
                     song.setDate(ugtrTrack.getDate().getUts());
                     songList.add(song);
                 }
@@ -83,7 +84,7 @@ public class LastfmServiceImpl implements LastfmService {
                 if(ugtrTrack.getDate() == null) {
                     song.setArtist(ugtrTrack.getArtist().getArtistName());
                     song.setTitle(ugtrTrack.getName());
-                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugtrTrack.getImage().get(2).getImageUrl());
+                    song.setImage(ugtrTrack.getImage().get(2).getImageUrl().equals("") ? defaultCover : ugtrTrack.getImage().get(2).getImageUrl());
                     song.setDate("now");
                 }
             });
@@ -106,7 +107,7 @@ public class LastfmServiceImpl implements LastfmService {
                 friend.setAvatar(ugfuser.getImage().get(2).getImageUrl().equals("") ? defaultAvatar : ugfuser.getImage().get(2).getImageUrl());
                 friends.add(friend);
             });
-        } catch (NullPointerException | IOException e) {
+        } catch (NullPointerException | IOException e) { 
             System.out.println("Something went wrong :(");
         }
 
