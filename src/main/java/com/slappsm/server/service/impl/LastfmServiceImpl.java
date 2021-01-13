@@ -23,8 +23,8 @@ import java.util.Objects;
 public class LastfmServiceImpl implements LastfmService {
 
     private final LastfmApi lastfmApi;
-    private final String defaultAvatar = "https://iv.pl/images/e3884f380aea1b13988e05e22594711e.jpg";
-    private final String defaultCover = "https://iv.pl/images/1e8189f85e9c36dd8972b67f4a5b513d.jpg";
+    private final String defaultAvatar = "http://fastup.pl/data/mj/sla-ppsm/avatar.jpg";
+    private final String defaultCover = "http://fastup.pl/data/mj/sla-ppsm/song.jpg";
 
     public LastfmServiceImpl() {
         Retrofit retrofit = new Retrofit.Builder()
